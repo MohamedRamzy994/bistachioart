@@ -1,0 +1,125 @@
+﻿@using Nop.Web.Controllers
+@model HomeModelFactory
+@{
+    Layout = "_ColumnsOne";
+
+    //page class
+    Html.AppendPageCssClassParts("html-home-page");
+}
+<div class="page home-page">
+    <div class="page-body">
+        @await Component.InvokeAsync("TopicBlock", new { systemName = "HomepageText" })
+
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeCategories })
+        @await Component.InvokeAsync("HomepageCategories")
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeProducts })
+        @await Component.InvokeAsync("HomepageProducts")
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeBestSellers })
+        @await Component.InvokeAsync("HomepageBestSellers")
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeNews })
+        @await Component.InvokeAsync("HomepageNews")
+        <div class="title sub-title"><strong>@T("admin.vendors")</strong></div>
+
+        <div class="row">
+            <div class="manufacturer-grid row">
+                @if (Model.Vendors.Count <= 4)
+                {
+                    foreach (var item in Model.Vendors)
+                    {
+                        <div class="item-box col-xs-12 col-sm-4 col-md-3">
+                            <div class="manufacturer-item product-category-item">
+                                <div class="picture">
+                                    <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                        <img alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" style="width:370px;height:360px;" />
+                                    </a>
+                                    <div class="title">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                            @item.Name
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div id="manufacturer-slider" class="manufacturer-slider owl-carousel owl-theme">
+                        @foreach (var item in Model.Vendors)
+                        {
+                            <div class="item-box col-xs-12 col-sm-12 col-md-12">
+                                <div class="manufacturer-item product-category-item">
+                                    <div class="picture">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                            <img class="owl-lazy" data-src="@item.PictureModel.ImageUrl" alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" style="width:370px;height:360px;" />
+                                        </a>
+                                        <div class="title">
+                                            <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                                @item.Name
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+        <div class="title sub-title"><strong>@T("admin.catalog.manufacturers")</strong></div>
+
+        <div class="row">
+            <div class="manufacturer-grid row">
+                @if (Model.Manufacturers.Count <= 3)
+                {
+                    foreach (var item in Model.Manufacturers)
+                    {
+                        <div class="item-box col-xs-12 col-sm-4 col-md-4">
+                            <div class="manufacturer-item product-category-item">
+                                <div class="picture">
+                                    <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                        <img alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" style="width:370px;height:360px;" />
+                                    </a>
+                                    <div class="title">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                            @item.Name
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div id="manufacturer-slider" class="manufacturer-slider owl-carousel owl-theme">
+                        @foreach (var item in Model.Manufacturers)
+                        {
+                            <div class="item-box col-xs-12 col-sm-12 col-md-12">
+                                <div class="manufacturer-item product-category-item">
+                                    <div class="picture">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                            <img class="owl-lazy" data-src="@item.PictureModel.ImageUrl" alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" style="width:370px;height:360px;" />
+                                        </a>
+                                        <div class="title">
+                                            <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                                @item.Name
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+
+
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforePoll })
+        @await Component.InvokeAsync("HomepagePolls")
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBottom })
+    </div>
+</div>

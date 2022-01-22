@@ -1,0 +1,7 @@
+﻿{
+  "DataConnectionString": "Data Source=localhost\\SQLEXPRESS;Initial Catalog=PistichioArtDB,Integrated Security=True",
+  "DataProvider": "sqlserver",
+  "RawDataSettings": {}
+}
+
+//"DataConnectionString": "Server=tcp:pistachioart.database.windows.net,1433;Initial Catalog=PistachioArt;Persist Security Info=False;User ID=PistachioArt;Password={Pistachio-7777};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",

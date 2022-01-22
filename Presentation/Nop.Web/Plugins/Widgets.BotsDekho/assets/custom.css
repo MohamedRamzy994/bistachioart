@@ -1,0 +1,365 @@
+.error {
+	border-radius: 3px;
+	border: 1px solid #d89a9a;
+	padding: 5px 25px !important;
+	color: #c11818;
+}
+.success {
+	border-radius: 3px;
+	border: 1px solid #acc0fb;
+	padding: 15px 20px !important;
+	color: #707fd2;
+}
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+	display: none;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	top: 105%;
+	left: 50%;
+	margin-left: -60px;
+}
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent black transparent;
+}
+
+.hsminfo {
+  position: relative;
+  display: inline-block;
+}
+
+.hsminfo .hsminfotext {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.hsminfo:hover .hsminfotext {
+  visibility: visible;
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.table-responsive {
+	overflow: auto;
+}
+.addnew_all_list {
+	min-width: 275px;
+}
+.list_camp_pt .card_camp_li {
+	min-width: 265px
+}
+.campang_box li {
+	width: 50% !important;
+}
+.left {
+	float: left !important;
+}
+.right {
+	float: right !important;
+}
+.clear {
+	clear: both !important;
+}
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	font-size: 1px;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.no-style {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.header_container .top-nav-right ul li a {
+	overflow: visible;
+}
+.multiselect-channel .multiselect-container {
+	max-height: 180px;
+	overflow: auto;
+}
+.scroller_custom {
+	min-height: 475px;
+}
+.table_outer .table {
+	overflow-y: auto !important;
+}
+.show-all-link {
+	position: absolute;
+	right: 20px;
+}
+.no-margin {
+	margin: 0px !important;
+}
+
+/** redash-report css changes start here **/
+#reportIframe {
+	width: 100%;
+	border: none;
+}
+
+#reportIframe.table {
+	height: 1050px;
+}
+
+#reportIframe.bar-chart {
+	height: 540px;
+}
+
+.tab.tabouterpt {
+	margin-bottom: 15px;
+	box-shadow: none;
+	background: #fff;
+	padding: 0 15px;
+	border-radius: 5px;
+	overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab.tabouterpt .tablinks {
+	padding: 15px 20px;
+	text-transform: capitalize;
+	border-top: solid 2px transparent;
+	color: #7d7d7d;
+}
+
+.tab.tabouterpt .tablinks.active, .tab.tabouterpt .tablinks:hover {
+	background: #f1f3f9;
+	border-color: #7d7d7d;
+	color: #000;
+}
+
+.tab.tabouterpt .tablinks.active {
+	border-color: #fc4942;
+}
+
+.main-title {
+	margin-bottom: 20px;
+}
+
+.reportlist-outer {
+	padding: 0;
+	margin: 0px;
+	background: #ffffff;
+	border-radius: 4px;
+}
+
+.reportlist-outer a {
+	padding: 15px 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	color: #616161;
+	border-bottom: solid 1px #e9ebf1;
+}
+
+.reportlist-outer a:last-child {
+	border-bottom: none;
+}
+
+.reportlist-outer a.active, .reportlist-outer a:hover {
+	color: #fc4942
+}
+
+.selectouterrow {
+	display: flex;
+	flex-flow: column;
+	background: #fff;
+	border-radius: 3px;
+	padding: 25px 20px;
+	margin-bottom: 15px;
+}
+
+.selectouterrow .selectinnerrow {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -8px;
+}
+
+.selectouterrow .selectinnerrow .form-group {
+	padding: 0 8px;
+	margin-bottom: 15px;
+	width: 25%;
+}
+
+.selectouterrow .selectinnerrow .form-group label {
+	display: block;
+	margin: 0 0 5px;
+}
+
+.selectouterrow .selectinnerrow .form-group select {
+	display: block;
+	width: 100%;
+	color: #000000;
+	background-color: #ffffff;
+	border: solid 1px #e9ebf1;
+	outline: none;
+	height: 45px;
+	padding: 0 15px;
+}
+
+.selectouterrow .btn {
+	width: 155px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 45px;
+}
+
+.fa-table:before {
+	content: "\f080";
+}
+
+.visualization {
+	display: flex;
+	justify-content: flex-end;
+	margin-left: auto;
+}
+
+.visualization .visualizer {
+	border-radius: 3px 3px 0 0;
+	width: 55px;
+	height: 45px;
+	font-size: 22px;
+	opacity: .5;
+	cursor: pointer; justify-content : center;
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.visualization .visualizer.active {
+	color: #fc4942;
+	background: #fff;
+	opacity: 1;
+}
+
+.group-vz {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.group-vz h2 {
+	margin: 0px;
+	text-transform: capitalize;
+	font-weight: 500;
+	color: #040405;
+	font-size: 18px
+}
+
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+
+.tab button:hover {
+	background-color: #ddd;
+}
+
+.tab button.active {
+	background-color: #ccc;
+}
+
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+/** redash-report css changes end here **/
+
+/** workflow builder iframe css changes starts here **/
+#workflowbuilder {
+	margin: -20px;
+}
+
+#workflowbuilder object {
+    height: calc(100vh - 90px);
+    height: -webkit-calc(100vh - 90px);
+    width: 100%;
+}
+
+/** workflow builder iframe css changes ends here **/
+
+.header-contant {
+   display: inline-flex;
+}
+.top-dropdown {
+    display: inline-block;
+    min-width: 158px;
+    margin-right: 64px;
+    margin-top: -7px;
+}
+.top-dropdown ul.multiselect-container.dropdown-menu {
+    width: 200px;
+}
+.top-dropdown ul.multiselect-container.dropdown-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9e9e9;
+    display: block;
+}
+.top-dropdown ul.multiselect-container.dropdown-menu li a {
+    font-size: inherit;
+}
+

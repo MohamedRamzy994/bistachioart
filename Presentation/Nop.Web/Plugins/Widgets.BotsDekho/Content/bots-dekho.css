@@ -1,0 +1,129 @@
+﻿.lc-wel-msg {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  z-index: 99999;
+  bottom: 20px;
+  left: 20px;
+}
+
+  .lc-wel-msg .lc-chat-fixed {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+
+  .lc-wel-msg .lc-text-window {
+    width: 174px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px 0 rgba(176,176,176,0.5);
+    border: solid 1px #e5e5e5;
+    background-color: #fff;
+    position: absolute;
+    line-height: 1.64;
+    letter-spacing: normal;
+    color: #24272c;
+    cursor: default;
+    font-size: 14px;
+    bottom: 20px;
+    left: 60px;
+  }
+
+    .lc-wel-msg .lc-text-window img {
+      max-width: 20px
+    }
+
+    .lc-wel-msg .lc-text-window .hi {
+      margin: 0 3px -5px
+    }
+
+    .lc-wel-msg .lc-text-window .lc-close-msg {
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      color: #24272c;
+      opacity: .3
+    }
+
+      .lc-wel-msg .lc-text-window .lc-close-msg:hover {
+        opacity: 1
+      }
+
+.stop-scrolling {
+  overflow: hidden;
+  height: 100%
+}
+
+#livechat-chat-indicator {
+  line-height: 19px;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  border: 0 none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: -6px;
+  background: #e52f48;
+}
+
+.lc-close-icon::after, .lc-close-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 2px;
+  background-color: #575757;
+  border-radius: 2px;
+}
+
+.lc-close-icon::before {
+  -ms-transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+  transform: rotate(50deg)
+}
+
+.lc-close-icon::after {
+  -ms-transform: rotate(130deg);
+  -webkit-transform: rotate(130deg);
+  transform: rotate(130deg)
+}
+
+iframe#botify-iframe {
+  position: fixed;
+  border: none;
+  background: none;
+  z-index: 99999;
+  width: 360px;
+  bottom: 20px;
+  left: 20px;
+  height: 80%;
+  border-radius: 3px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+@media(max-width:767px) {
+  iframe#botify-iframe {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: none;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0;
+    box-shadow: none !important;
+  }
+}

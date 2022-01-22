@@ -1,0 +1,38 @@
+﻿@model TopMenuModel.CategoryLineModel
+@if (Model.Category.SubCategories.Count > 0)
+{
+    var entity = Model.Category.SubCategories.Where(x => x.IncludeInTopMenu == true).ToList();
+
+    if (entity.Count > 0)
+    {
+        @await Html.PartialAsync("_SubCategoryLine.TopMenu", Model.Category)
+    }
+    else
+    {
+        <li>
+            <a href="@Url.RouteUrl("Category", new { SeName = Model.Category.SeName })">
+                @Model.Category.Name
+                @if (Model.Category.NumberOfProducts.HasValue)
+                {
+                    <text> </text>@T("Categories.TotalProducts", Model.Category.NumberOfProducts.Value)
+                }
+            </a>
+        </li>
+    }
+
+
+}
+else
+{
+    <li>
+        <a href="@Url.RouteUrl("Category", new { SeName = Model.Category.SeName })">
+            @Model.Category.Name
+            @if (Model.Category.NumberOfProducts.HasValue)
+            {
+                <text> </text>@T("Categories.TotalProducts", Model.Category.NumberOfProducts.Value)
+            }
+        </a>
+    </li>
+}
+
+

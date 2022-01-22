@@ -1,0 +1,7 @@
+﻿{
+  "DataConnectionString": "Data Source=SQL5080.site4now.net;Initial Catalog=DB_A66BD3_pistachioart;User Id=DB_A66BD3_pistachioart_admin;Password=Pistachio-7777",
+  "DataProvider": "sqlserver",
+  "RawDataSettings": {}
+}
+
+//"DataConnectionString": "Server=tcp:pistachioart.database.windows.net,1433;Initial Catalog=PistachioArt;Persist Security Info=False;User ID=PistachioArt;Password={Pistachio-7777};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",

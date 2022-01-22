@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "";
+
+    Html.AddCssFileParts("~/Plugins/Widgets.BotsDekho/Content/bots-dekho.css");
+    Html.AddScriptParts(ResourceLocation.Footer, "~/Plugins/Widgets.BotsDekho/assets/livechat.js");
+}
+
+
+
+<iframe src="./Plugins/Widgets.BotsDekho/assets/view.html" id="botify-iframe" style="display: none;" allow="geolocation;microphone;camera">
+</iframe>
+<div class="lc-wel-msg" id="lc-connect" style="display: block;">
+    <img class="lc-chat-fixed" id="lc-connect-chat" src="./Plugins/Widgets.BotsDekho/assets/2-(2).png" width="55" height="55" alt="ChatBot">
+    <div class="lc-text-window" id="lc-text-window" style="display: none;">
+        Hey! Click me for help.
+        <div class="lc-close-msg" id="lc-close-msg">
+            <i id="lc-close-popup" class="lc-close-icon"></i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Bots Dekho Chat Bot",
+  "SystemName": "Widgets.BotsDekho",
+  "Version": "1.0.0",
+  "SupportedVersions": [ "4.30" ],
+  "Author": "Miva",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.BotsDekho.dll",
+  "Description": "This plugin allows you to configure chat bot on your website."
+}

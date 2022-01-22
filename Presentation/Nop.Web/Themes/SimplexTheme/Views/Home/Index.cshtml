@@ -1,0 +1,158 @@
+﻿@using Nop.Web.Controllers
+@model HomeModelFactory
+@{
+    Layout = "_ColumnsOne";
+
+    //page class
+    Html.AppendPageCssClassParts("html-home-page");
+}
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9" data-aos="zoom-in-up">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MRfIkTwUxIw"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<div class="page home-page">
+    <div class="page-body">
+        @await Component.InvokeAsync("TopicBlock", new { systemName = "HomepageText" })
+
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeCategories })
+        @await Component.InvokeAsync("HomepageCategories")
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeProducts })
+        @await Component.InvokeAsync("HomepageProducts")
+
+        <div class="title sub-title"><strong>@T("admin.vendors")</strong></div>
+
+        <div class="row" data-aos="zoom-in-up">
+            <div class="manufacturer-grid row">
+                @if (Model.Vendors.Count <= 4)
+                {
+                    foreach (var item in Model.Vendors)
+                    {
+                        <div class="item-box col-xs-12 col-sm-4 col-md-3">
+                            <div class="manufacturer-item product-category-item">
+                                <div class="picture">
+                                    <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                        <img alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" />
+                                    </a>
+                                    <div class="title">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                            @item.Name
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div id="manufacturer-slider" class="manufacturer-slider owl-carousel owl-theme">
+                        @foreach (var item in Model.Vendors)
+                        {
+                            <div class="item-box col-xs-12 col-sm-12 col-md-12">
+                                <div class="manufacturer-item product-category-item">
+                                    <div class="picture">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                            <img class="owl-lazy" data-src="@item.PictureModel.ImageUrl" alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" />
+                                        </a>
+                                        <div class="title">
+                                            <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                                @item.Name
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+
+        <br />
+        <div class="title sub-title"><strong>لوحات جدارية بتصاميم خاصة</strong></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12" data-aos="flip-left"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-duration="2000">
+
+                <img class="img img-bordered" src="../Themes/SimplexTheme/Content/images/New Project (11).png" />
+
+            </div>
+
+        </div>
+        <br />
+
+
+        <div class="title sub-title"><strong>@T("admin.catalog.manufacturers")</strong></div>
+
+        <div class="row" data-aos="zoom-in-up">
+            <div class="manufacturer-grid row">
+                @if (Model.Manufacturers.Count <= 3)
+                {
+                    foreach (var item in Model.Manufacturers)
+                    {
+                        <div class="item-box col-xs-12 col-sm-4 col-md-4">
+                            <div class="manufacturer-item product-category-item">
+                                <div class="picture">
+                                    <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                        <img alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" style="width:370px;height:360px;" />
+                                    </a>
+                                    <div class="title">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                            @item.Name
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div id="manufacturer-slider" class="manufacturer-slider owl-carousel owl-theme">
+                        @foreach (var item in Model.Manufacturers)
+                        {
+                            <div class="item-box col-xs-12 col-sm-12 col-md-12">
+                                <div class="manufacturer-item product-category-item">
+                                    <div class="picture">
+                                        <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title" class="product-img">
+                                            <img class="owl-lazy" data-src="@item.PictureModel.ImageUrl" alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" style="width:370px;height:360px;" />
+                                        </a>
+                                        <div class="title">
+                                            <a href="@Url.RouteUrl("Manufacturer", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                                @item.Name
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+
+        @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HomepageBeforeNews })
+        @await Component.InvokeAsync("HomepageNews")
+    
+
+
+
+
+
+    </div>
+</div>
